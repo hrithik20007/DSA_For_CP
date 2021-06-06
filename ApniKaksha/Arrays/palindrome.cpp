@@ -1,4 +1,4 @@
-//To check if the input string is a palindrome or not.
+//To check if the input character array (not string as string's length is not pre-defined) is a palindrome or not.
 
 
 #include<iostream>
