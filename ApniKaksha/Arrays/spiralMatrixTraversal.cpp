@@ -18,7 +18,7 @@ Diagram of traversal--
 using namespace std;
 
 int main(){
-	int n,m,i,j,k1,k2;
+	int n,m,i,j,k1,k2,f;
 	int rs,re,cs,ce;
 	cout<<"Enter row length : "<<endl;
 	cin>>n;
@@ -36,28 +36,41 @@ int main(){
 	re=n-1;		//Keeps track of the ending row
 	cs=0;		//Keeps track of the starting column
 	ce=m-1;		//Keeps track of the ending column
+	f=0;		//Keeps track of the continuity of the for loops. Thus, a for loop can't be skipped and if it does, then the loop stops
 	
 	while(rs<=re && cs<=ce){
 
 		//For stating row
-		for(i=cs;i<=ce;i++)
-			cout<<a[rs][i]<<" ";
-		rs++;	
+		if(f==0){
+			for(i=cs;i<=ce;i++)
+				cout<<a[rs][i]<<" ";
+			rs++;
+			f=1;	
+		}
 
 		//For ending column
-		for(j=rs;j<=re;j++)
-			cout<<a[j][ce]<<" ";
-		ce--;
+		else if(f==1){
+			for(j=rs;j<=re;j++)
+				cout<<a[j][ce]<<" ";
+			ce--;
+			f=2;
+		}
 		
 		//For ending row
-		for(i=ce;i>=cs;i--)
-			cout<<a[re][i]<<" ";
-		re--;
+		else if(f==2){
+			for(i=ce;i>=cs;i--)
+				cout<<a[re][i]<<" ";
+			re--;
+			f=3;
+		}
 
 		//For starting column
-		for(j=re;j>=rs;j--)
-			cout<<a[j][cs]<<" ";
-		cs++;
+		else{
+			for(j=re;j>=rs;j--)
+				cout<<a[j][cs]<<" ";
+			cs++;
+			f=0;
+		}
 	}
 
 	return 0;
