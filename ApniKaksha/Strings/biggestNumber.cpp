@@ -7,8 +7,6 @@
 using namespace std;
 
 int main(){
-	int i;
-	string s3,s4;
 
 	string s1="53214";
 	cout<<"Original : "<<s1<<endl;
