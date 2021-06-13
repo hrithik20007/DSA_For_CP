@@ -20,7 +20,7 @@ int main(){
 	int j=1;						//The position from right at which we will unset the bit (starts from 0).
 
 	int b=~(1<<j);					//Complement of left shifted 1. After left shifting 1, we get 0010, then after complementing we get, 1101.
-	int s=b&n;						//'AND' operation for making the bit 0 at i's position.
+	int s=b&n;						//'AND' operation for making the bit 0 at j's position.
 
 	cout<<"After unsetting bit : "<<s<<endl;
 	return 0;
