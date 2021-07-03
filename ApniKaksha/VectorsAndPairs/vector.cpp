@@ -37,7 +37,7 @@ int main(){
 	v1.pop_back();							//To pop elements
 
 	
-	for(auto element:v1){
+	for(auto element:v1){					//auto automatically tells the compiler what type of element it is. In this case, it is of int type.
 		cout<<element<<" ";					//3 1
 	}
 	cout<<endl;
