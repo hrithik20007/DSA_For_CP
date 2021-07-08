@@ -11,19 +11,19 @@ This program is an introduction to Object Oriented Programming in C++.
 using namespace std;
 
 class student{
-	//string name;						//This is a private attribute
-	public: 							//If we don't add this, then all the attributes will be treated as private
+	//string name;								//This is a private attribute
+	public: 									//If we don't add this, then all the attributes will be treated as private
 	string name;
 	int age;
 	bool gender;
 	
 	/*	
-	void setName(string s){				//To demonstrate how to access private attributes			
+	void setName(string s){						//To demonstrate how to access private attributes			
 		name=s;
 	}*/
 	
 
-	student(){									//Default Constructor --> Always called when an instance of a class is created 
+	student(){									//Default Constructor --> Always called when an instance of a class is created
 		cout<<"Default Constructor"<<endl;
 	}
 
@@ -104,7 +104,9 @@ int main(){
 	a.info();
 	cout<<endl;
 
-	student b;										//Default Constructor is called
+	student b;										//Default Constructor is called (We cannot do this when a parameterised constructor is defined unless the 
+													//default constructor is also explicitly defined. If it is not defined, we should atleast initialise the
+													//parameterised constructor parameters).
 	b.name="Anirban";
 	b.info();
 	cout<<endl;
